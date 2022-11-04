@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonFirst,buttonSecond;
     //part 1
@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonFirst = findViewById(R.id.buttonFirst);
+        buttonFirst.setOnClickListener(this);
         buttonSecond = findViewById(R.id.buttonSecond);
+        buttonSecond.setOnClickListener(this);
     }
 
     public void toDo(View v) {
@@ -26,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
         if(v.equals(buttonSecond)){
             Toast.makeText(getApplicationContext(),"...to do to do to do...", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        toDo(view);
     }
 }

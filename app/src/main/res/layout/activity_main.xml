@@ -13,7 +13,6 @@
         android:background="@color/teal_200"
         android:backgroundTint="#E21111"
         android:backgroundTintMode="add"
-        android:onClick="toDo"
         android:text="The Invisible Man's To Do List"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
 
@@ -30,7 +29,6 @@
 
     <Button
         android:id="@+id/buttonSecond"
-        android:onClick="toDo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="The Pink Panther's To Do List"
