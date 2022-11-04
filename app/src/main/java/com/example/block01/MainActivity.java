@@ -1,10 +1,13 @@
 package com.example.block01;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -17,7 +20,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         buttonFirst = findViewById(R.id.buttonFirst);
         buttonFirst.setOnClickListener(this);
-        buttonSecond = findViewById(R.id.buttonSecond);
+        buttonSecond = new Button(getApplicationContext());
+        buttonSecond.setTextColor(Color.BLUE);
+        buttonSecond.setBackgroundColor(Color.parseColor("#FD9BF3"));
+        buttonSecond.setText("The Pink Panther's To Do List");
+        RelativeLayout cl_mainScreen = (RelativeLayout) findViewById(R.id.relative_layout_mainScreen);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.addRule(RelativeLayout.BELOW, buttonFirst.getId());
+        cl_mainScreen.addView(buttonSecond, params);
         buttonSecond.setOnClickListener(this);
     }
 
