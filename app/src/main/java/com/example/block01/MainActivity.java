@@ -48,4 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toDo(view);
     }
 }
+
 // Farhan jkr test branch
+
+// Farhan jkr commit
+
